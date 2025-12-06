@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PushButton: View {
     let title: String
-    @State var isOn: Bool
+    @Binding var isOn: Bool
     var onColors = [Color.red, Color.yellow]
     var offColors = [Color(white: 0.6), Color(white: 0.4)]
     
@@ -32,9 +32,9 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            PushButton(title: "Remember me", isOn: rememberMe)
+            PushButton(title: "Remember me", isOn: $rememberMe)
             Text(rememberMe ? "On" : "Off")
-            Toggle("Remember me", isOn: $rememberMe)
+         //   Toggle("Remember me", isOn: $rememberMe)
         }
         .padding()
     }
