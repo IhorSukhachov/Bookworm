@@ -9,20 +9,20 @@ import SwiftUI
 
 struct PushButton: View {
     let title: String
-    @State var isOm: Bool
+    @State var isOn: Bool
     var onColors = [Color.red, Color.yellow]
     var offColors = [Color(white: 0.6), Color(white: 0.4)]
     
     
     var body: some View {
         Button(title) {
-            isOm.toggle()
+            isOn.toggle()
         }
         .padding()
-        .background(LinearGradient (colors: isOm ? onColors : offColors, startPoint: .top, endPoint: .bottom))
+        .background(LinearGradient (colors: isOn ? onColors : offColors, startPoint: .top, endPoint: .bottom))
         .foregroundStyle(.white)
         .clipShape(.capsule)
-        .shadow(radius: isOm ? 0 : 5)
+        .shadow(radius: isOn ? 0 : 5)
     }
 }
 
@@ -32,6 +32,8 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            PushButton(title: "Remember me", isOn: rememberMe)
+            Text(rememberMe ? "On" : "Off")
             Toggle("Remember me", isOn: $rememberMe)
         }
         .padding()
