@@ -4,8 +4,9 @@
 //
 //  Created by Ihor Sukhachov on 06.12.2025.
 //
-
+import SwiftData
 import SwiftUI
+
 
 @main
 struct BookwormApp: App {
@@ -13,5 +14,6 @@ struct BookwormApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Student.self)
     }
 }
