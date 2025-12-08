@@ -49,9 +49,9 @@ struct DetailView: View {
             Text("Are you sure you want to delete \(book.title)?")
         }
         .toolbar {
-            Button("Delete this book", systemImage: "trash") [
+            Button("Delete this book", systemImage: "trash") {
                 showingDeleteAlert = true
-            ]
+            }
         }
     }
     
