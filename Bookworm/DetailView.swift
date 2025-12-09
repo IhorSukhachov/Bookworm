@@ -35,8 +35,13 @@ struct DetailView: View {
             Text(book.review)
                 .padding()
             
+            Text(book.date.formatted(date: .abbreviated, time: .shortened))
+                .foregroundStyle(.secondary)
+                .padding(.top, 10)
+            
             RatingView(rating: .constant(book.rating))
                 .font(.largeTitle)
+            
             
         }
         .navigationTitle(book.title)
