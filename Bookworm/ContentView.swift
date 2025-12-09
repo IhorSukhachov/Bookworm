@@ -30,10 +30,20 @@ struct ContentView: View {
                             EmojiRatingView(rating: book.rating)
                                 .font(.largeTitle)
                             VStack(alignment: .leading) {
-                                Text(book.title)
-                                    .font(.headline )
-                                Text(book.author)
-                                    .foregroundStyle(.secondary)
+                                if book.rating == 1 {
+                                    Text(book.title)
+                                        .font(.headline)
+                                        .foregroundStyle(.red)
+                                    Text(book.author)
+                                        .foregroundStyle(.secondary)
+                                }
+                                else {
+                                    Text(book.title)
+                                        .font(.headline )
+                                    Text(book.author)
+                                        .foregroundStyle(.secondary)
+                                }
+                                
                             }
                           
                         }
